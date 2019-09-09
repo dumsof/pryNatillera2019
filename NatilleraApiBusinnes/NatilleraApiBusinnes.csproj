@@ -9,8 +9,4 @@
     <ProjectReference Include="..\NotificacionApiCrossClothing\NotificacionApiCrossClothing.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-
 </Project>
