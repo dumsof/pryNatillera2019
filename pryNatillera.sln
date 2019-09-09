@@ -21,7 +21,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NatilleraApiBusinnes", "Nat
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.4 DataAccess", "1.4 DataAccess", "{AC1D0E87-0D54-4178-BC90-75CE17E0A23C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NatilleraApiDataAccess", "NatilleraApiDataAccess\NatilleraApiDataAccess.csproj", "{7F55F3AC-537F-4738-812C-B4BDA1300D54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NatilleraApiDataAccess", "NatilleraApiDataAccess\NatilleraApiDataAccess.csproj", "{7F55F3AC-537F-4738-812C-B4BDA1300D54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NatilleraApiDataAccessContract", "NatilleraApiDataAccessContract\NatilleraApiDataAccessContract.csproj", "{91FC22B0-5650-41AC-80E0-9663E758F18D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.5 CrossClothing", "1.5 CrossClothing", "{E6E24FF1-668E-42BA-8497-5FD99E669E8A}"
+	ProjectSection(SolutionItems) = preProject
+		Descripción.txt = Descripción.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificacionApiCrossClothing", "NotificacionApiCrossClothing\NotificacionApiCrossClothing.csproj", "{42D8C8E1-3778-46E6-ACC0-E4F22B75FF6F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +58,14 @@ Global
 		{7F55F3AC-537F-4738-812C-B4BDA1300D54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F55F3AC-537F-4738-812C-B4BDA1300D54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F55F3AC-537F-4738-812C-B4BDA1300D54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91FC22B0-5650-41AC-80E0-9663E758F18D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91FC22B0-5650-41AC-80E0-9663E758F18D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91FC22B0-5650-41AC-80E0-9663E758F18D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91FC22B0-5650-41AC-80E0-9663E758F18D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42D8C8E1-3778-46E6-ACC0-E4F22B75FF6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42D8C8E1-3778-46E6-ACC0-E4F22B75FF6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42D8C8E1-3778-46E6-ACC0-E4F22B75FF6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42D8C8E1-3778-46E6-ACC0-E4F22B75FF6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,6 +80,9 @@ Global
 		{3FA09EB5-CB36-44CC-84AE-017981D55FDA} = {0D64AFEC-E5DC-4302-8887-7AE9043AC429}
 		{AC1D0E87-0D54-4178-BC90-75CE17E0A23C} = {D9BE282B-F2C4-4512-8F4A-91E6AB55D372}
 		{7F55F3AC-537F-4738-812C-B4BDA1300D54} = {AC1D0E87-0D54-4178-BC90-75CE17E0A23C}
+		{91FC22B0-5650-41AC-80E0-9663E758F18D} = {AC1D0E87-0D54-4178-BC90-75CE17E0A23C}
+		{E6E24FF1-668E-42BA-8497-5FD99E669E8A} = {D9BE282B-F2C4-4512-8F4A-91E6AB55D372}
+		{42D8C8E1-3778-46E6-ACC0-E4F22B75FF6F} = {E6E24FF1-668E-42BA-8497-5FD99E669E8A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {01B593A1-59A1-4338-8426-F31D9B90FD1E}
