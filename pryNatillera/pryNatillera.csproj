@@ -14,4 +14,8 @@
     <ProjectReference Include="..\NatilleraApiAplication\NatilleraApiAplication.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Filter\" />
+  </ItemGroup>
+
 </Project>
