@@ -9,6 +9,7 @@
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.HttpsPolicy;
+    using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
@@ -34,8 +35,14 @@
         {
             //Dum: se agrega la inyeccion para el logger
             services.AddSingleton<ILoggerManager, LoggerManager>();
+
             //Dum: se inyecta la configuración para base de datos.
-            services.AddDbContext<NatilleraDBContext>(options=> options.UseSqlServer(Configuration.GetConnectionString("DataBaseConexion")));
+            services.AddDbContext<NatilleraDBContext>(opcion => opcion.UseSqlServer(Configuration.GetConnectionString("DefaultConection")));
+
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<NatilleraDBContext>()
+                .AddDefaultTokenProviders();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
