@@ -8,10 +8,17 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="NLog" Version="4.6.7" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\LoggerService\LoggerService.csproj" />
     <ProjectReference Include="..\NatilleraApiAplication\NatilleraApiAplication.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Filter\ActionFilter\" />
+    <Folder Include="Filter\ExceptionFilter\" />
   </ItemGroup>
 
 </Project>
