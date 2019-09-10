@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\NatilleraApiDataAccessContract\NatilleraApiDataAccessContract.csproj" />
     <ProjectReference Include="..\NotificacionApiCrossClothing\NotificacionApiCrossClothing.csproj" />
   </ItemGroup>
 

@@ -10,10 +10,12 @@
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.HttpsPolicy;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Logging;
     using Microsoft.Extensions.Options;
+    using NatilleraApiDataAccess;
     using NLog;
 
     public class Startup
@@ -30,7 +32,10 @@
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //Dum: se agrega la inyeccion para el logger
             services.AddSingleton<ILoggerManager, LoggerManager>();
+            //Dum: se inyecta la configuración para base de datos.
+            services.AddDbContext<NatilleraDBContext>(options=> options.UseSqlServer(Configuration.GetConnectionString("DataBaseConexion")));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 

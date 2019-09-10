@@ -1,14 +1,14 @@
 ﻿namespace NatilleraApiDataAccess
 {
     using Microsoft.EntityFrameworkCore;
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
-    public class NatilleraDBContext : DbContext
+    using NatilleraApiDataAccessContract;
+
+
+    public class NatilleraDBContext : DbContext, INatilleraDBContext
     {
         public NatilleraDBContext()
         {
-                
+
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
