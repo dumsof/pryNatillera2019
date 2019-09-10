@@ -18,6 +18,11 @@
         {
         }
 
+        /// <summary>
+        /// Gets or sets the Paises
+        /// </summary>
+        //public DbSet<Pais> Paises { set; get; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
