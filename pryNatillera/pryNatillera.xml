@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>pryNatillera</name>
+    </assembly>
+    <members>
+        <member name="M:pryNatillera.Controllers.ValuesController.Get">
+            <summary>
+            Obtener todos los valores.
+            </summary>
+            <returns>The <see cref="T:System.Collections.Generic.IEnumerable`1"/></returns>
+            <response code="200">Operación realizada con éxito.</response>
+            <response code="404">No existen datos para la consulta realizada.</response>
+            <response code="500">Error inesperado.</response>
+        </member>
+    </members>
+</doc>

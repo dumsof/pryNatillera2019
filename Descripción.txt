@@ -29,3 +29,15 @@ user:sa
 clv:123
 
 video 2 minuto 34:59
+
+
+--COMO HACER QUE EL SERVICIO CORRA EN IIS
+se debe agregar en el archivo de program.cs, las siguientes lineas o actualizar las existentes.
+
+var host = new WebHostBuilder()
+.UseKestrel()
+.UseUrls("http://*:5000")
+.UseContentRoot(Directory.GetCurrentDirectory())
+.UseIISIntegration()
+.UseStartup<Startup>()
+.Build();

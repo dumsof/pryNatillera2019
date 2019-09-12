@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
+    using System.Reflection;
     using System.Threading.Tasks;
     using LoggerService;
     using Microsoft.AspNetCore.Builder;
@@ -18,6 +19,7 @@
     using Microsoft.Extensions.Options;
     using NatilleraApiDataAccess;
     using NLog;
+    using Swashbuckle.AspNetCore.Swagger;
 
     public class Startup
     {
@@ -39,11 +41,32 @@
             //Dum: se inyecta la configuración para base de datos.
             services.AddDbContext<NatilleraDBContext>(opcion => opcion.UseSqlServer(Configuration.GetConnectionString("DefaultConection")));
 
+            //Dum: manejo del token.
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<NatilleraDBContext>()
                 .AddDefaultTokenProviders();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            //DUM: Inicio configuración swagger, Install-Package Swashbuckle.AspNetCore
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info
+                {
+                    Version = "v1",
+                    Title = "Swagger Api Natillera",
+                    Description = "Servicio para la administración de la información de natilleras",
+                    TermsOfService = "No Aplica",
+                    Contact = new Contact() { Name = "Talking Dotnet", Email = "contact@talkingdotnet.com", Url = "www.talkingdotnet.com" }
+                });
+                // Set the comments path for the Swagger JSON and UI.
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.DocInclusionPredicate((docName, description) => true);
+                c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
+                c.IncludeXmlComments(xmlPath);
+            });
+            //DUM: Final Configuración Swagger
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,6 +83,15 @@
             }
 
             app.UseHttpsRedirection();
+
+            //DUM: configuaracion Swager
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Swagger Web Api Natillera");
+            });
+            //DUM: Final Configuracion Swagger
+
             app.UseMvc();
         }
     }
