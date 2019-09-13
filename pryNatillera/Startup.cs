@@ -1,25 +1,21 @@
 ﻿namespace pryNatillera
 {
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Linq;
-    using System.Reflection;
-    using System.Threading.Tasks;
     using LoggerService;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
-    using Microsoft.AspNetCore.HttpsPolicy;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
-    using Microsoft.Extensions.Logging;
-    using Microsoft.Extensions.Options;
     using NatilleraApiDataAccess;
     using NLog;
+    using pryNatillera.Extensions;
     using Swashbuckle.AspNetCore.Swagger;
+    using System;
+    using System.IO;
+    using System.Linq;
+    using System.Reflection;
 
     public class Startup
     {
@@ -91,6 +87,9 @@
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Swagger Web Api Natillera");
             });
             //DUM: Final Configuracion Swagger
+
+            //Dum: se realiza el llamado del middleware del manejo de exception global.
+            app.ConfigureCustomExceptionMiddleware();
 
             app.UseMvc();
         }

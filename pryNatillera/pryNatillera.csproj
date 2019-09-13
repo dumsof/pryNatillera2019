@@ -23,7 +23,6 @@
 
   <ItemGroup>
     <Folder Include="Filter\ActionFilter\" />
-    <Folder Include="Filter\ExceptionFilter\" />
   </ItemGroup>
 
 </Project>
