@@ -25,8 +25,8 @@ namespace pryNatillera.Controllers
         // [ProducesResponseType(typeof(RespuestaPais), (int)HttpStatusCode.InternalServerError)]
         public ActionResult<IEnumerable<string>> Get()
         {
-            //throw new Exception("Exception while fetching all the students from the storage.");
-            return new string[] { "value1", "value2" };
+            throw new Exception("Exception while fetching all the students from the storage.");
+            //return new string[] { "value1", "value2" };
         }
 
         // GET api/values/5

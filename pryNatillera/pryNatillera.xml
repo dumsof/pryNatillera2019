@@ -13,5 +13,16 @@
             <response code="404">No existen datos para la consulta realizada.</response>
             <response code="500">Error inesperado.</response>
         </member>
+        <member name="M:pryNatillera.Extensions.ExceptionMiddlewareExtensions.ConfigureCustomExceptionMiddleware(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            metodo que se extiende de IApplicationBuilder, para poder agrregar el middleware de la exception.
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="T:pryNatillera.Extensions.ServiceExtensions">
+            <summary>
+            clase que permite inyectar el servicio de registrar log
+            </summary>
+        </member>
     </members>
 </doc>

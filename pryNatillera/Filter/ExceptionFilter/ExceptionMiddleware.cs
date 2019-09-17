@@ -1,5 +1,5 @@
 ﻿namespace pryNatillera.Filter.ExceptionFilter
-{   
+{
     using LoggerService;
     using Microsoft.AspNetCore.Http;
     using pryNatillera.Models;
@@ -26,7 +26,7 @@
             }
             catch (Exception ex)
             {
-                _logger.LogError($"Something went wrong: {ex}");
+                _logger.LogError($"Error Interno: {ex}");
                 await HandleExceptionAsync(httpContext, ex);
             }
         }
@@ -36,10 +36,12 @@
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
 
-            return context.Response.WriteAsync(new ErrorDetails()
+            return context.Response.WriteAsync(new MensajeExeption()
             {
-                StatusCode = context.Response.StatusCode,
-                Message = "Internal Server Error from the custom middleware."
+                codigo = context.Response.StatusCode,
+                Mensaje = $"Error interno en el servidor : {exception.Message} ",
+                Exception = exception.ToString()
+
             }.ToString());
         }
     }

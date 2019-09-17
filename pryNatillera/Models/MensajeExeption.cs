@@ -2,10 +2,12 @@
 {
     using Newtonsoft.Json;
 
-    public class ErrorDetails
+    public class MensajeExeption
     {
-        public int StatusCode { get; set; }
-        public string Message { get; set; }
+        public int codigo { get; set; }
+        public string Mensaje { get; set; }
+
+        public string Exception { get; set; }
 
 
         public override string ToString()

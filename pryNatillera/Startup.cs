@@ -1,6 +1,5 @@
 ﻿namespace pryNatillera
-{
-    using LoggerService;
+{   
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Identity;
@@ -22,6 +21,7 @@
         public Startup(IConfiguration configuration)
         {
             //se utiliza nlog para crear un archivo de log, Install-Package NLog -Version 4.6.7.
+            //linea que permite optener la configuracion para nlog, por ejemplo ruta archivo nombre archivo.
             LogManager.LoadConfiguration(String.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
             Configuration = configuration;
         }
@@ -32,7 +32,8 @@
         public void ConfigureServices(IServiceCollection services)
         {
             //Dum: se agrega la inyeccion para el logger
-            services.AddSingleton<ILoggerManager, LoggerManager>();
+            //services.AddSingleton<ILoggerManager, LoggerManager>();
+            services.ConfigureLoggerService();
 
             //Dum: se inyecta la configuración para base de datos.
             services.AddDbContext<NatilleraDBContext>(opcion => opcion.UseSqlServer(Configuration.GetConnectionString("DefaultConection")));
