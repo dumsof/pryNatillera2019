@@ -35,13 +35,17 @@
             //services.AddSingleton<ILoggerManager, LoggerManager>();
             services.ConfigureLoggerService();
 
-            //Dum: se inyecta la configuración para base de datos.
-            services.AddDbContext<NatilleraDBContext>(opcion => opcion.UseSqlServer(Configuration.GetConnectionString("DefaultConection")));
+            //Dum: se realiza una clase que contiene la configuración y se inyecta la configuración para base de datos.
+            services.ConfiguracionSqlContext(Configuration);
+            //services.AddDbContext<NatilleraDBContext>(opcion => opcion.UseSqlServer(Configuration.GetConnectionString("DefaultConection")));
 
             //Dum: manejo del token.
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<NatilleraDBContext>()
                 .AddDefaultTokenProviders();
+
+            //Dum: se inyecta el contenedor del repositorio
+            services.ConfiguracionRepositoryContenedor();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
