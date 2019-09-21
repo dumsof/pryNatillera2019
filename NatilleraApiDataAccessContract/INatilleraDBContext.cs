@@ -1,11 +1,11 @@
 ﻿namespace NatilleraApiDataAccessContract
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
+    using Microsoft.EntityFrameworkCore;
+    using NatilleraApiDataAccessContract.Entidades;
+   
 
     public interface INatilleraDBContext
     {
-
+        DbSet<NatilleraEntity> Natillera { get; set; }
     }
 }

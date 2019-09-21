@@ -3,7 +3,7 @@
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
     using NatilleraApiDataAccessContract;
-
+    using NatilleraApiDataAccessContract.Entidades;
 
     public class NatilleraDBContext : IdentityDbContext<ApplicationUser>, INatilleraDBContext
     {
@@ -17,6 +17,8 @@
         public NatilleraDBContext(DbContextOptions<NatilleraDBContext> opcion) : base(opcion)
         {
         }
+
+        public DbSet<NatilleraEntity> Natillera { get; set; }
 
         /// <summary>
         /// Gets or sets the Paises
