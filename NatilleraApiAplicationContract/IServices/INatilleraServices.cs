@@ -1,9 +1,10 @@
 ﻿namespace NatilleraApiAplicationContract.IServices
 {
+    using NatilleraApiAplicationContract.Models;
     using NatilleraApiBusinnes.Models;   
 
     public interface INatilleraServices
     {
-        void GuardarNatillera(Natillera natillera);
+        Respuesta GuardarNatillera(Natillera natillera);
     }
 }

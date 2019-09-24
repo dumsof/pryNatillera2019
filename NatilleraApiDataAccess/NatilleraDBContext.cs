@@ -18,7 +18,7 @@
         {
         }
 
-        public DbSet<NatilleraEntity> Natillera { get; set; }
+        public DbSet<NatilleraEntity> Natilleras { get; set; }
 
         /// <summary>
         /// Gets or sets the Paises
@@ -27,7 +27,7 @@
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

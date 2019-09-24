@@ -13,6 +13,15 @@
             <response code="404">No existen datos para la consulta realizada.</response>
             <response code="500">Error inesperado.</response>
         </member>
+        <member name="M:pryNatillera.Controllers.ValuesController.GuardarNatillera(NatilleraApiBusinnes.Models.Natillera)">
+            <summary>
+            Guardar los datos de una natillera.
+            </summary>
+            <param name="natillera"></param>
+            <response code="200">Operación realizada con éxito.</response>
+            <response code="404">No existen datos para la consulta realizada.</response>
+            <response code="500">Error inesperado.</response>
+        </member>
         <member name="M:pryNatillera.Extensions.ExceptionMiddlewareExtensions.ConfigureCustomExceptionMiddleware(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
             <summary>
             metodo que se extiende de IApplicationBuilder, para poder agrregar el middleware de la exception.

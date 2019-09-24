@@ -1,14 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using NatilleraApiAplicationContract.IServices;
-using NatilleraApiBusinnes.Models;
-
-namespace pryNatillera.Controllers
+﻿namespace pryNatillera.Controllers
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Net;
+    using System.Threading.Tasks;
+    using Microsoft.AspNetCore.Mvc;
+    using NatilleraApiAplicationContract.IServices;
+    using NatilleraApiAplicationContract.Models;
+    using NatilleraApiBusinnes.Models;
+
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
@@ -43,14 +44,21 @@ namespace pryNatillera.Controllers
             return "value";
         }
 
-        // POST api/values
+        /// <summary>
+        /// Guardar los datos de una natillera.
+        /// </summary>
+        /// <param name="natillera"></param>
+        /// <response code="200">Operación realizada con éxito.</response>
+        /// <response code="404">No existen datos para la consulta realizada.</response>
+        /// <response code="500">Error inesperado.</response>
         [HttpPost]
-        [ProducesResponseType(typeof(Natillera), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(Respuesta), (int)HttpStatusCode.OK)]
         [ProducesResponseType(typeof(Natillera), (int)HttpStatusCode.NotFound)]
         [ProducesResponseType(typeof(Natillera), (int)HttpStatusCode.InternalServerError)]
-        public void Post([FromBody] Natillera natillera)
+        public void GuardarNatillera([FromBody] Natillera natillera)
         {
-            this.natilleraService.GuardarNatillera(natillera);
+            Respuesta respuesta = this.natilleraService.GuardarNatillera(natillera);
+            Ok(respuesta);
         }
 
         // PUT api/values/5

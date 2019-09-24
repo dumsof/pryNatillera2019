@@ -41,3 +41,8 @@ var host = new WebHostBuilder()
 .UseIISIntegration()
 .UseStartup<Startup>()
 .Build();
+
+DUM PENDIENTES
+--seguiria en el capitulo 18
+
+Tarea: se debe buscar como configurar la cadena de conexion en los archivos x ambiente.
