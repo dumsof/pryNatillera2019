@@ -1,6 +1,8 @@
 ﻿namespace NatilleraApiAplication.Services
 {
     using NatilleraApiAplicationContract.IServices;
+    using NatilleraApiBusinnes.Models;
+    using NatilleraApiDataAccess.AutoMapper;
     using NatilleraApiDataAccessContract.IRepositories;
 
     public class NatilleraServices : INatilleraServices
@@ -11,9 +13,9 @@
             this.repositorio = repositorio;
         }
 
-        public void GuardarEjemplo()
+        public void GuardarNatillera(Natillera natillera)
         {
-            //this.repositorio.Natillera.Create(EntidadNatillera);
+            this.repositorio.Natillera.Create(NatilleraMapper.NatilleraEntityMap(natillera));
             this.repositorio.Save();
         }
 

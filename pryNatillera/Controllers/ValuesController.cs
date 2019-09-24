@@ -4,6 +4,8 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using NatilleraApiAplicationContract.IServices;
+using NatilleraApiBusinnes.Models;
 
 namespace pryNatillera.Controllers
 {
@@ -11,6 +13,11 @@ namespace pryNatillera.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        private readonly INatilleraServices natilleraService;
+        public ValuesController(INatilleraServices natilleraService)
+        {
+            this.natilleraService = natilleraService;
+        }
         /// <summary>
         /// Obtener todos los valores.
         /// </summary>
@@ -38,8 +45,12 @@ namespace pryNatillera.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        [ProducesResponseType(typeof(Natillera), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(Natillera), (int)HttpStatusCode.NotFound)]
+        [ProducesResponseType(typeof(Natillera), (int)HttpStatusCode.InternalServerError)]
+        public void Post([FromBody] Natillera natillera)
         {
+            this.natilleraService.GuardarNatillera(natillera);
         }
 
         // PUT api/values/5

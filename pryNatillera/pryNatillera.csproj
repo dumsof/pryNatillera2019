@@ -19,6 +19,7 @@
   <ItemGroup>
     <ProjectReference Include="..\LoggerService\LoggerService.csproj" />
     <ProjectReference Include="..\NatilleraApiAplication\NatilleraApiAplication.csproj" />
+    <ProjectReference Include="..\NotificacionApiCrossClothing\NotificacionApiCrossClothing.csproj" />
   </ItemGroup>
 
   <ItemGroup>

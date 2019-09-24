@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace NatilleraApiAplicationContract.IServices
+﻿namespace NatilleraApiAplicationContract.IServices
 {
+    using NatilleraApiBusinnes.Models;   
+
     public interface INatilleraServices
     {
-
+        void GuardarNatillera(Natillera natillera);
     }
 }

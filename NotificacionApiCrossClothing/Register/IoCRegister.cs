@@ -3,6 +3,8 @@
     using Microsoft.Extensions.DependencyInjection;
     using NatilleraApiAplication.Services;
     using NatilleraApiAplicationContract.IServices;
+    using NatilleraApiDataAccess.Repositories;
+    using NatilleraApiDataAccessContract.IRepositories;
 
     public static class IoCRegister
     {
@@ -22,7 +24,8 @@
 
         private static IServiceCollection AddResgistroRepositorio(this IServiceCollection services)
         {
-            //services.AddTransient<INatilleraRepositorio, NatilleraRepositorio>();
+            services.AddScoped<IRepositorioContenedor, RepositorioContenedor>();
+            services.AddTransient<INatilleraRepositorio, NatilleraRepositorio>();
             return services;
         }
 

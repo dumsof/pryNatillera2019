@@ -9,6 +9,7 @@
     using Microsoft.Extensions.DependencyInjection;
     using NatilleraApiDataAccess;
     using NLog;
+    using NotificacionApiCrossClothing.Register;
     using pryNatillera.Extensions;
     using Swashbuckle.AspNetCore.Swagger;
     using System;
@@ -45,7 +46,10 @@
                 .AddDefaultTokenProviders();
 
             //Dum: se inyecta el contenedor del repositorio
-            services.ConfiguracionRepositoryContenedor();
+            //services.ConfiguracionRepositoryContenedor();
+
+            //Dum: se injectan los servicios de las capas de repositorio y servicios.
+            IoCRegister.AddResgistro(services);
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 

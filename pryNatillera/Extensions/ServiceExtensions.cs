@@ -21,12 +21,12 @@
 
         public static void ConfiguracionSqlContext(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<NatilleraDBContext>(opcion => opcion.UseSqlServer(configuration.GetConnectionString("DefaultConection")));
+            services.AddDbContext<NatilleraDBContext>(opcion => opcion.UseSqlServer("Server=DARWIN-PC;Database=WebApiPrueba;Trusted_Connection=True;"));//configuration.GetConnectionString("DataBaseConexion")));
         }
 
         public static void ConfiguracionRepositoryContenedor(this IServiceCollection services)
         {
             services.AddScoped<IRepositorioContenedor, RepositorioContenedor>();
-        }
+        }        
     }
 }
