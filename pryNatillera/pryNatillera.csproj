@@ -22,8 +22,4 @@
     <ProjectReference Include="..\NotificacionApiCrossClothing\NotificacionApiCrossClothing.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Filter\ActionFilter\" />
-  </ItemGroup>
-
 </Project>

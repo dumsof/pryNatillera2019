@@ -9,8 +9,9 @@
     using NatilleraApiAplicationContract.IServices;
     using NatilleraApiAplicationContract.Models;
     using NatilleraApiBusinnes.Models;
+    using pryNatillera.Filter.ActionFilter;
 
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class ValuesController : ControllerBase
     {
@@ -52,13 +53,16 @@
         /// <response code="404">No existen datos para la consulta realizada.</response>
         /// <response code="500">Error inesperado.</response>
         [HttpPost]
+        [ActionName("GuardarNatillera")]
         [ProducesResponseType(typeof(Respuesta), (int)HttpStatusCode.OK)]
         [ProducesResponseType(typeof(Natillera), (int)HttpStatusCode.NotFound)]
         [ProducesResponseType(typeof(Natillera), (int)HttpStatusCode.InternalServerError)]
-        public void GuardarNatillera([FromBody] Natillera natillera)
+        [ValidateModel]
+        public IActionResult GuardarNatillera([FromBody] Natillera natillera)
         {
             Respuesta respuesta = this.natilleraService.GuardarNatillera(natillera);
-            Ok(respuesta);
+
+            return new OkObjectResult(respuesta);
         }
 
         // PUT api/values/5
