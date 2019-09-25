@@ -4,6 +4,8 @@
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
+    using NatilleraApiAplication.Services;
+    using NatilleraApiAplicationContract.IServices;
     using NatilleraApiDataAccess;
     using NatilleraApiDataAccess.Repositories;
     using NatilleraApiDataAccessContract.IRepositories;
@@ -23,6 +25,26 @@
         {
             services.AddDbContext<NatilleraDBContext>(opcion => 
             opcion.UseSqlServer(configuration.GetValue<string>("ConnectionString:DataBaseConexion")));
+        }
+
+        public static IServiceCollection AddResgistro(this IServiceCollection services)
+        {
+            AddResgistroServices(services);
+            AddResgistroRepositorio(services);
+            return services;
+        }
+
+        private static IServiceCollection AddResgistroServices(this IServiceCollection services)
+        {
+            services.AddTransient<INatilleraServices, NatilleraServices>();
+            return services;
+        }
+
+        private static IServiceCollection AddResgistroRepositorio(this IServiceCollection services)
+        {
+            services.AddScoped<IRepositorioContenedor, RepositorioContenedor>();
+            services.AddTransient<INatilleraRepositorio, NatilleraRepositorio>();
+            return services;
         }
     }
 }

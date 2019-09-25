@@ -8,6 +8,7 @@
     <ProjectReference Include="..\NatilleraApiAplicationContract\NatilleraApiAplicationContract.csproj" />
     <ProjectReference Include="..\NatilleraApiBusinnes\NatilleraApiBusinnes.csproj" />
     <ProjectReference Include="..\NatilleraApiDataAccess\NatilleraApiDataAccess.csproj" />
+    <ProjectReference Include="..\NotificacionApiCrossClothing\NotificacionApiCrossClothing.csproj" />
   </ItemGroup>
 
 </Project>

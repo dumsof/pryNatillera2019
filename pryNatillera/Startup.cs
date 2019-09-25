@@ -49,7 +49,7 @@
             //services.ConfiguracionRepositoryContenedor();
 
             //Dum: se injectan los servicios de las capas de repositorio y servicios.
-            IoCRegister.AddResgistro(services);
+            ServiceExtensions.AddResgistro(services);
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
