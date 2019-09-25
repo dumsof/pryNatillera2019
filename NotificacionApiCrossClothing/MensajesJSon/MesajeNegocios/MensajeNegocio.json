@@ -1,0 +1,15 @@
+{
+  "MensajesNegocio": [
+
+    {
+      "Identificador": 1,
+      "Titulo": "Titulo1",
+      "Contenido": "Contenido1"
+    },
+    {
+      "Identificador": 1,
+      "Titulo": "Titulo1",
+      "Contenido": "Contenido1"
+    }
+  ]
+}

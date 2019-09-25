@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>D:\ESTUDIO-NET\Natillera\pryNatillera\pryNatillera.xml</DocumentationFile>
+    <DocumentationFile>pryNatillera.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
