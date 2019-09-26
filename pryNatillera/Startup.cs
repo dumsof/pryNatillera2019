@@ -3,13 +3,11 @@
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Identity;
-    using Microsoft.AspNetCore.Mvc;
-    using Microsoft.EntityFrameworkCore;
+    using Microsoft.AspNetCore.Mvc;  
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using NatilleraApiDataAccess;
-    using NLog;
-    using NotificacionApiCrossClothing.Register;
+    using NLog;   
     using pryNatillera.Extensions;
     using Swashbuckle.AspNetCore.Swagger;
     using System;
@@ -38,7 +36,7 @@
 
             //Dum: se realiza una clase que contiene la configuración y se inyecta la configuración para base de datos.
             services.ConfiguracionSqlContext(Configuration);
-            //services.AddDbContext<NatilleraDBContext>(opcion => opcion.UseSqlServer(Configuration.GetConnectionString("DefaultConection")));
+          
 
             //Dum: manejo del token.
             services.AddIdentity<ApplicationUser, IdentityRole>()

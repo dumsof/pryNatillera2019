@@ -13,5 +13,11 @@ namespace NatilleraApiDataAccessContract.Entidades
         public string Nombre { get; set; }
 
         public string Descripcion { get; set; }
+
+        /// <summary>
+        /// controlar la concurrencia.
+        /// </summary>
+        [Timestamp]
+        public byte[] RowVersion { get; set; }
     }
 }

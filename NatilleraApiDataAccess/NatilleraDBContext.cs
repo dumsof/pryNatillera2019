@@ -20,14 +20,14 @@
 
         public DbSet<NatilleraEntity> Natilleras { get; set; }
 
-        /// <summary>
-        /// Gets or sets the Paises
-        /// </summary>
-        //public DbSet<Pais> Paises { set; get; }
-
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            ///controlar la concurrencia, se valida esta propiedad en el token.
+            ///Tema pagina 2272 pdf core 2.2
+            modelBuilder.Entity<NatilleraEntity>().Property(p => p.RowVersion).IsConcurrencyToken();
         }
     }
 }

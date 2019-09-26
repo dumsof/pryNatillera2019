@@ -89,8 +89,8 @@
     {
       "Type": "1",
       "Code": "1",
-      "Text": "El tipo de documento y el número de documento no pueden estar vacios.",
-      "Title": "Validación de información"
+      "Text": "La información se registro con éxito",
+      "Title": "Información Registrada"
       //"Validation": "Campos obligatorio del pre-registro"
     },
     {

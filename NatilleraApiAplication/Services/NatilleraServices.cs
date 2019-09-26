@@ -5,6 +5,7 @@
     using NatilleraApiBusinnes.Models;
     using NatilleraApiDataAccess.AutoMapper;
     using NatilleraApiDataAccessContract.IRepositories;
+    using NotificacionApiCrossClothing.Message;
 
     public class NatilleraServices : INatilleraServices
     {
@@ -16,7 +17,8 @@
 
         public Respuesta GuardarNatillera(Natillera natillera)
         {
-            
+            Message message = new Message(MessageCode.Message0000);
+
             this.repositorio.Natillera.Create(NatilleraMapper.NatilleraEntityMap(natillera));
             this.repositorio.Save();
 
@@ -24,9 +26,9 @@
             {
                 Mensaje = new Mensaje
                 {
-                    Identificador = 1,
-                    Titulo = "Registro Exitoso",
-                    Contenido = "Información registrada con éxito"
+                    Identificador = message.Code,
+                    Titulo = message.Title,
+                    Contenido = message.Text
                 }
             };
         }
