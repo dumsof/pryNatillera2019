@@ -1,8 +1,6 @@
-﻿
-
-namespace NatilleraApiDataAccessContract.Entidades
-{
-    using System.ComponentModel.DataAnnotations;
+﻿namespace NatilleraApiDataAccessContract.Entidades
+{   
+    using System.ComponentModel.DataAnnotations;  
 
     //clase para mapear los campos de la base de datos.
     public class NatilleraEntity: Entity
@@ -12,6 +10,6 @@ namespace NatilleraApiDataAccessContract.Entidades
 
         public string Nombre { get; set; }
 
-        public string Descripcion { get; set; }      
+        public string Descripcion { get; set; }        
     }
 }
