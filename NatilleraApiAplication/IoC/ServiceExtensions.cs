@@ -1,12 +1,9 @@
-﻿namespace pryNatillera.Extensions
+﻿namespace NatilleraApiAplication.IoC
 {
-    using LoggerService;
-    using Microsoft.EntityFrameworkCore;
-    using Microsoft.Extensions.Configuration;
+    using LoggerService;   
     using Microsoft.Extensions.DependencyInjection;
     using NatilleraApiAplication.Services;
-    using NatilleraApiAplicationContract.IServices;
-    using NatilleraApiDataAccess;
+    using NatilleraApiAplicationContract.IServices;   
     using NatilleraApiDataAccess.Repositories;
     using NatilleraApiDataAccessContract.IRepositories;
 
@@ -19,13 +16,7 @@
         {
             //singleton, creara un servicio cada vez que se necesite y luego cada solicitud posterior estara llamada la misma instancia.
             services.AddSingleton<ILoggerManager, LoggerManager>();
-        }
-
-        public static void ConfiguracionSqlContext(this IServiceCollection services, IConfiguration configuration)
-        {
-            services.AddDbContext<NatilleraDBContext>(opcion => 
-            opcion.UseSqlServer(configuration.GetValue<string>("ConnectionString:DataBaseConexion")));
-        }
+        }       
 
         public static IServiceCollection AddResgistro(this IServiceCollection services)
         {

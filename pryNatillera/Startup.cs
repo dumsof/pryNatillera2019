@@ -1,13 +1,15 @@
 ﻿namespace pryNatillera
-{   
+{
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Identity;
-    using Microsoft.AspNetCore.Mvc;  
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
+    using NatilleraApiAplication.IoC;
     using NatilleraApiDataAccess;
-    using NLog;   
+    using NLog;
     using pryNatillera.Extensions;
     using Swashbuckle.AspNetCore.Swagger;
     using System;
@@ -35,8 +37,11 @@
             services.ConfigureLoggerService();
 
             //Dum: se realiza una clase que contiene la configuración y se inyecta la configuración para base de datos.
-            services.ConfiguracionSqlContext(Configuration);
-          
+            //services.ConfiguracionSqlContext(Configuration);
+
+            services.AddDbContext<NatilleraDBContext>(opcion =>
+           opcion.UseSqlServer(Configuration.GetValue<string>("ConnectionString:DataBaseConexion")));
+
 
             //Dum: manejo del token.
             services.AddIdentity<ApplicationUser, IdentityRole>()

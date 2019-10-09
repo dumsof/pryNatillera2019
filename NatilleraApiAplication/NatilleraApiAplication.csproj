@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\LoggerService\LoggerService.csproj" />
     <ProjectReference Include="..\NatilleraApiAplicationContract\NatilleraApiAplicationContract.csproj" />
     <ProjectReference Include="..\NatilleraApiBusinnes\NatilleraApiBusinnes.csproj" />
     <ProjectReference Include="..\NatilleraApiDataAccessContract\NatilleraApiDataAccessContract.csproj" />

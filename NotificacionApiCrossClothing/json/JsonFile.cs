@@ -8,7 +8,7 @@ using System.Text;
 
 namespace NotificacionApiCrossClothing.json
 {
-   public static class JsonFile
+    public static class JsonFile
     {
         public static T FromJson<T>(string jsonFileName)
         {
@@ -19,8 +19,7 @@ namespace NotificacionApiCrossClothing.json
         {
             string path = string.IsNullOrEmpty(AppDomain.CurrentDomain.RelativeSearchPath) ?
                 AppDomain.CurrentDomain.BaseDirectory : AppDomain.CurrentDomain.RelativeSearchPath;
-            JObject jsonConfig = JObject.Parse(File.ReadAllText(string.Format(CultureInfo.CurrentCulture, "{0}\\{1}", path, jsonFileName, CultureInfo.CurrentCulture)));
-           //JObject jsonConfig = JObject.Parse(File.ReadAllText($"{path}{jsonFileName}"));
+            JObject jsonConfig = JObject.Parse(File.ReadAllText($"{path}{jsonFileName}"));
             return jsonConfig.ToString(Formatting.None);
         }
     }

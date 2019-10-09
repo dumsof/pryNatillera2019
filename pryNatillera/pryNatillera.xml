@@ -28,11 +28,6 @@
             </summary>
             <param name="app"></param>
         </member>
-        <member name="T:pryNatillera.Extensions.ServiceExtensions">
-            <summary>
-            clase que permite inyectar el servicio de registrar log
-            </summary>
-        </member>
         <member name="T:pryNatillera.Filter.ActionFilter.ValidateModelAttribute">
             <summary>
             Defines the <see cref="T:pryNatillera.Filter.ActionFilter.ValidateModelAttribute" />

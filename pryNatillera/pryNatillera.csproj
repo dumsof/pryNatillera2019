@@ -21,12 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LoggerService\LoggerService.csproj" />
-    <ProjectReference Include="..\NatilleraApiAplicationContract\NatilleraApiAplicationContract.csproj" />
     <ProjectReference Include="..\NatilleraApiAplication\NatilleraApiAplication.csproj" />
-    <ProjectReference Include="..\NatilleraApiBusinnes\NatilleraApiBusinnes.csproj" />
-    <ProjectReference Include="..\NatilleraApiDataAccessContract\NatilleraApiDataAccessContract.csproj" />
-    <ProjectReference Include="..\NatilleraApiDataAccess\NatilleraApiDataAccess.csproj" />
     <ProjectReference Include="..\NotificacionApiCrossClothing\NotificacionApiCrossClothing.csproj" />
   </ItemGroup>
 
