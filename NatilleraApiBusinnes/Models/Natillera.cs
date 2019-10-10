@@ -9,7 +9,7 @@ namespace NatilleraApiBusinnes.Models
     public class Natillera
     {
         [DataType(DataType.Currency)]
-        public int IdNatillera { get; set; }
+        public int NatilleraId { get; set; }
 
         [Required(ErrorMessage = "El campo {0} es requerido, por favor verifique.")]
         [StringLength(50, ErrorMessage = "El campo {0} debe contener maximo {1} caracteres.")]
@@ -17,6 +17,6 @@ namespace NatilleraApiBusinnes.Models
 
         [Required(ErrorMessage = "El campo {0} es requerido, por favor verifique.")]
         [StringLength(150, ErrorMessage = "El campo {0} debe contener maximo  {1} caracteres.")]
-        public string Descripcion { get; set; }       
+        public string Descripcion { get; set; }
     }
 }

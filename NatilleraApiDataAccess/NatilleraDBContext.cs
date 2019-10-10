@@ -4,6 +4,7 @@
     using Microsoft.EntityFrameworkCore;
     using NatilleraApiDataAccessContract;
     using NatilleraApiDataAccessContract.Entidades;
+    using System;
 
     public class NatilleraDBContext : IdentityDbContext<ApplicationUser>, INatilleraDBContext
     {
@@ -20,14 +21,34 @@
 
         public DbSet<Natilleras> Natilleras { get; set; }
 
-        
+        public DbSet<TiposDocumentos> TiposDocumentos { get; set; }
+
+        public DbSet<Prestamos> Prestamos { get; set; }
+
+        public DbSet<ActividadesRecaudos> ActividadesRecaudos { get; set; }
+
+        public DbSet<Socios> Socios { get; set; }
+
+        public DbSet<NatilleraSocios> NatilleraSocios { get; set; }
+
+        public DbSet<CuotasPrestamos> CuotasPrestamos { get; set; }
+
+        public DbSet<CuotasSocios> CuotasSocios { get; set; }
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
             ///controlar la concurrencia, se valida esta propiedad en el token.
             ///Tema pagina 2272 pdf core 2.2
-            modelBuilder.Entity<Natilleras>().Property(p => p.RowVersion).IsConcurrencyToken();
+            //modelBuilder.Entity<Natilleras>().Property(p => p.RowVersion).IsConcurrencyToken();
+
+
+            //se agrega a la columna fecha creacion un valor por defecto.
+            modelBuilder.Entity<Natilleras>()
+                        .Property(b => b.FechaCreacionRow)
+                        .HasDefaultValueSql("getdate()");
         }
     }
 }

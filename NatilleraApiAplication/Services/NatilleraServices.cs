@@ -19,7 +19,7 @@
         {
             Message message = new Message(MessageCode.Message0000);
 
-            this.repositorio.Natillera.Create(NatilleraMapper.NatilleraEntityMap(natillera));
+            this.repositorio.Natillera.Create((NatilleraApiDataAccessContract.Entidades.Natilleras)NatilleraMapper.NatilleraEntityMap((Natillera)natillera));
             this.repositorio.Save();
 
             return new Respuesta

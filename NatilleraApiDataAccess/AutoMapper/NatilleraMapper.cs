@@ -10,11 +10,11 @@
         /// </summary>
         /// <param name="natillera"></param>
         /// <returns></returns>
-        public static Natilleras NatilleraEntityMap(Natillera natillera)
+        public static Natilleras NatilleraEntityMap(NatilleraApiBusinnes.Models.Natillera natillera)
         {
-            return new Natilleras
+            return new NatilleraApiDataAccessContract.Entidades.Natilleras
             {
-                IdNatillera = natillera.IdNatillera,
+                NatilleraId = natillera.NatilleraId,
                 Nombre = natillera.Nombre,
                 Descripcion = natillera.Descripcion
             };
@@ -26,11 +26,11 @@
         /// </summary>
         /// <param name="natilleraEntity"></param>
         /// <returns></returns>
-        public static Natillera NatilleraMap(Natilleras natilleraEntity)
+        public static Natillera NatilleraMap(NatilleraApiDataAccessContract.Entidades.Natilleras natilleraEntity)
         {
             return new Natillera
             {
-                IdNatillera = natilleraEntity.IdNatillera,
+                NatilleraId = natilleraEntity.NatilleraId,
                 Nombre = natilleraEntity.Nombre,
                 Descripcion = natilleraEntity.Descripcion
             };
