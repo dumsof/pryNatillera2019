@@ -10,9 +10,9 @@
         /// </summary>
         /// <param name="natillera"></param>
         /// <returns></returns>
-        public static NatilleraEntity NatilleraEntityMap(Natillera natillera)
+        public static Natilleras NatilleraEntityMap(Natillera natillera)
         {
-            return new NatilleraEntity
+            return new Natilleras
             {
                 IdNatillera = natillera.IdNatillera,
                 Nombre = natillera.Nombre,
@@ -26,7 +26,7 @@
         /// </summary>
         /// <param name="natilleraEntity"></param>
         /// <returns></returns>
-        public static Natillera NatilleraMap(NatilleraEntity natilleraEntity)
+        public static Natillera NatilleraMap(Natilleras natilleraEntity)
         {
             return new Natillera
             {

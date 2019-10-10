@@ -6,6 +6,6 @@
 
     public interface INatilleraDBContext
     {
-        DbSet<NatilleraEntity> Natilleras { get; set; }
+        DbSet<Natilleras> Natilleras { get; set; }
     }
 }

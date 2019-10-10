@@ -190,10 +190,6 @@ namespace NatilleraApiDataAccess.Migrations
 
                     b.Property<string>("Nombre");
 
-                    b.Property<byte[]>("RowVersion")
-                        .IsConcurrencyToken()
-                        .ValueGeneratedOnAddOrUpdate();
-
                     b.HasKey("IdNatillera");
 
                     b.ToTable("Natilleras");

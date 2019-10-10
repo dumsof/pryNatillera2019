@@ -18,7 +18,7 @@
         {
         }
 
-        public DbSet<NatilleraEntity> Natilleras { get; set; }
+        public DbSet<Natilleras> Natilleras { get; set; }
 
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -27,7 +27,7 @@
 
             ///controlar la concurrencia, se valida esta propiedad en el token.
             ///Tema pagina 2272 pdf core 2.2
-            modelBuilder.Entity<NatilleraEntity>().Property(p => p.RowVersion).IsConcurrencyToken();
+            modelBuilder.Entity<Natilleras>().Property(p => p.RowVersion).IsConcurrencyToken();
         }
     }
 }

@@ -3,7 +3,7 @@
     using System.ComponentModel.DataAnnotations;  
 
     //clase para mapear los campos de la base de datos.
-    public class NatilleraEntity: Entity
+    public class Natilleras: Entity
     {
         [Key]
         public int IdNatillera { get; set; }
