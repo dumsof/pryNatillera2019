@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>E:\DUM\PROYECTOS NET\Natillera2019\pryNatillera\pryNatillera\pryNatillera.xml</DocumentationFile>
+    <DocumentationFile>pryNatillera.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
