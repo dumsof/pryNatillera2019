@@ -46,7 +46,7 @@
         }
 
         /// <summary>
-        /// Guardar los datos de una natillera.
+        /// Guardar los datos de una natillera que ingresa el usuario.
         /// </summary>
         /// <param name="natillera"></param>
         /// <response code="200">Operación realizada con éxito.</response>
